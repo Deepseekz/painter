@@ -6,21 +6,20 @@ import static org.hamcrest.Matchers.equalTo;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.*;
 
 public class ItemListTest {
 
     private ByteArrayOutputStream outContent;
 
-    @Before
+    @BeforeEach
     public void setUpStream() {
         outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
     }
 
-    @After
+    @AfterEach
     public void cleanUpStream() {
         System.setOut(null);
     }
