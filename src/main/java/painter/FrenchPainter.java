@@ -2,7 +2,7 @@ package painter;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class FrenchPainter {
+public class FrenchPainter implements Painter{
     GraphicsContext graphicsContext;
 
     public FrenchPainter(GraphicsContext graphicsContext) {
@@ -10,11 +10,11 @@ public class FrenchPainter {
     }
 
 
-    public void drawRectangle(double x, double y, double w, double h) {
-        //utiliser graphicsContext.strokeRectangle
+    public void drawRectangle(double xTopLeft, double yTopLeft, double w, double h) {
+        this.graphicsContext.strokeRect(xTopLeft,yTopLeft,w,h);
     }
 
-    public void drawCircle(double x, double y, double radius) {
-        //utiliser graphicsContext.strokeOval
+    public void drawCircle(double xCenter, double yCenter, double radius) {
+        this.graphicsContext.strokeOval(xCenter-radius,yCenter-radius, 2*radius, 2*radius);
     }
 }
